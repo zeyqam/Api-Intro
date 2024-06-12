@@ -4,6 +4,7 @@ using AppApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240612203359_UpdateCategoryNameLength")]
+    partial class UpdateCategoryNameLength
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,15 +33,18 @@ namespace AppApi.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Author")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -70,19 +75,19 @@ namespace AppApi.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 6, 13, 1, 46, 4, 93, DateTimeKind.Local).AddTicks(7792),
+                            CreatedDate = new DateTime(2024, 6, 13, 0, 33, 58, 493, DateTimeKind.Local).AddTicks(2894),
                             Name = "UI UX"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 6, 13, 1, 46, 4, 93, DateTimeKind.Local).AddTicks(7812),
+                            CreatedDate = new DateTime(2024, 6, 13, 0, 33, 58, 493, DateTimeKind.Local).AddTicks(2915),
                             Name = "Programming"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 6, 13, 1, 46, 4, 93, DateTimeKind.Local).AddTicks(7815),
+                            CreatedDate = new DateTime(2024, 6, 13, 0, 33, 58, 493, DateTimeKind.Local).AddTicks(2917),
                             Name = "Frontend"
                         });
                 });

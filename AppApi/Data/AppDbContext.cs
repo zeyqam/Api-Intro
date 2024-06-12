@@ -12,6 +12,7 @@ namespace AppApi.Data
 
 
        public DbSet<Category> Categories { get; set; }
+       public DbSet<Book> Books { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         { 

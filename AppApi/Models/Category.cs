@@ -4,7 +4,7 @@ namespace AppApi.Models
 {
     public class Category:BaseEntity
     {
-        [StringLength(10)]
+        [StringLength(255)]
         public string? Name { get; set; }
     }
 }
